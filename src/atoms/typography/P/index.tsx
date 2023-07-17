@@ -3,7 +3,7 @@ import { className as cls } from './styles'
 
 type Props = {
 	children: ReactNode
-	additionalClassNames: string
+	additionalClassNames?: string
 } & ComponentProps<'p'>
 
 export const P: React.FC<Props> = (
