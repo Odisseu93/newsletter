@@ -3,7 +3,7 @@ import { className as cls } from './styles'
 
 type Props = {
 	type: 'email' /* is it possible to add pass types */
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 	additionalClassNames?: string
 } & ComponentProps<'input'>
 
