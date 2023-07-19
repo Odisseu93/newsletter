@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { isValidEmail } from '../../helpers/validations'
+import { lastSegment } from '../../utils/lastSegment'
 
 type Props = {
 	onSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void
@@ -22,12 +23,23 @@ export const Form = ({ onSubmit }: Props) => {
 		) as HTMLInputElement
 		setIsInvalid(!isValidEmail(email.value))
 
-		if (isValidEmail(email.value)) navigate('subscribe/success')
+
+		console.log(lastSegment())
+		if (isValidEmail(email.value)) {
+			lastSegment() === 'subscribe'
+				? navigate('success')
+				: navigate('subscribe/success')
+			console.log(lastSegment())
+		}
 		email.value = ''
 		setTimeout(() => {
 			setIsInvalid(false)
 		}, 1500)
 	}
+
+	// useEffect(() => {
+	// 	console.log(lastSegment)
+	// }, [])
 
 	return (
 		<form className={cls.form} onSubmit={onSubmit}>
