@@ -22,7 +22,7 @@ export const Form = ({ onSubmit }: Props) => {
 		) as HTMLInputElement
 		setIsInvalid(!isValidEmail(email.value))
 
-		if (isValidEmail(email.value)) navigate('success')
+		if (isValidEmail(email.value)) navigate('subscribe/success')
 		email.value = ''
 		setTimeout(() => {
 			setIsInvalid(false)
