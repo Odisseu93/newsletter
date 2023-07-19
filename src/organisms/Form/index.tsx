@@ -3,8 +3,10 @@ import { className as cls } from './styles'
 import { Button } from '../../atoms/Button'
 import { InputEmailWithLabel } from '../../molecules/InputEmailWithLabel'
 
-import { isValidEmail } from '../../helpers/validations'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { isValidEmail } from '../../helpers/validations'
 
 type Props = {
 	onSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void
@@ -12,15 +14,16 @@ type Props = {
 
 export const Form = ({ onSubmit }: Props) => {
 	const [isInvalid, setIsInvalid] = useState<boolean>(false)
+	const navigate = useNavigate()
 
 	const handleClick = () => {
 		const email = document.querySelector(
 			'input[type=email]'
 		) as HTMLInputElement
-
 		setIsInvalid(!isValidEmail(email.value))
-		email.value = ''
 
+		if (isValidEmail(email.value)) navigate('success')
+		email.value = ''
 		setTimeout(() => {
 			setIsInvalid(false)
 		}, 1500)
