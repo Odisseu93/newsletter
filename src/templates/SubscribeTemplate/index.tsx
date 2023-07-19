@@ -5,6 +5,7 @@ import { P } from '../../atoms/typography/P'
 import { FeaturesList } from '../../molecules/FeaturesList'
 import { Form } from '../../organisms/Form'
 import { Picture } from '../../molecules/Picture'
+import { Attribution } from '../../molecules/Attribution'
 
 type SourceType = {
 	media: string
@@ -33,19 +34,26 @@ export const SubscribeTemplate = ({
 	sourceImageList,
 	image,
 }: SubscribeTemplateProps) => (
-	<main className={cls.main}>
-		<Picture className={cls.picture} sourceList={sourceImageList} image={image} />
+	<>
+		<main className={cls.main}>
+			<Picture
+				className={cls.picture}
+				sourceList={sourceImageList}
+				image={image}
+			/>
 
-		<section className={cls.section}>
-			<H1>{title}</H1>
+			<section className={cls.section}>
+				<H1>{title}</H1>
 
-			<P>{paragraph}</P>
+				<P>{paragraph}</P>
 
-			{features && features.length > 0 && (
-				<FeaturesList featuresTextContent={features} />
-			)}
+				{features && features.length > 0 && (
+					<FeaturesList featuresTextContent={features} />
+				)}
 
-			<Form onSubmit={onSubmit} />
-		</section>
-	</main>
+				<Form onSubmit={onSubmit} />
+			</section>
+		</main>
+		<Attribution />
+	</>
 )
