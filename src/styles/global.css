@@ -19,6 +19,12 @@ body,h1,h2,h3,h4,h5,h6,p,ol,ul {
 	font-family: 'Roboto', sans-serif;
 }
 
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+}
+
 ol,
 ul {
 	list-style: none;
