@@ -25,17 +25,19 @@ const image = {
 	alt: 'illustration sign up',
 }
 
-const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-	e.preventDefault()
-}
+export const Subscribe = () => {
+	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+		e.preventDefault()
+	}
 
-export const Subscribe = () => (
-	<SubscribeTemplate
-		title={title}
-		paragraph={paragraph}
-		features={featuresTextContent}
-		sourceImageList={sourceImageList}
-		image={image}
-		onSubmit={handleSubmit}
-	/>
-)
+	return (
+		<SubscribeTemplate
+			title={title}
+			paragraph={paragraph}
+			features={featuresTextContent}
+			sourceImageList={sourceImageList}
+			image={image}
+			onSubmit={handleSubmit}
+		/>
+	)
+}
