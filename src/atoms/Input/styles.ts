@@ -1,4 +1,7 @@
 export const className = {
-	input: 'w-max p-3',
-	'input-email': ' border-none outline outline-1 outline-neutral-grey rounded-md',
+	input: 'w-full p-3',
+
+	'input-email': ' border-none rounded-md' +
+		' outline outline-1 outline-neutral-grey' +
+		' hover:outline-neutral-dark-slate-grey focus:outline-neutral-dark-slate-grey',
 }
