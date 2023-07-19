@@ -1,23 +1,5 @@
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Outlet,
-} from 'react-router-dom'
+import { RoutesList } from './routes/RoutesList'
 
-import { Subscribe } from './pages/Subscribe'
-import { Success } from './pages/Success'
-
-const App = () => (
-	<Router>
-		<Routes>
-			<Route path='/' element={<Subscribe />} />
-			<Route path='subscribe' element={<Outlet />}>
-				<Route index element={<Subscribe />} />
-				<Route path='success' element={<Success />} />
-			</Route>
-		</Routes>
-	</Router>
-)
+const App = () => <RoutesList />
 
 export default App
