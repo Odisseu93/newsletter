@@ -1,0 +1,1 @@
+export const lastSegment = () => window.location.href.split('/').pop()
