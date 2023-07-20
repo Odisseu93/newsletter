@@ -17,7 +17,11 @@ export default {
 			'mobile': '375px',
 			'desktop': '1440px'
 		},
-		extend: {},
+		extend: {
+			backgroundImage: {
+				'linear-gradient-tomato': 'linear-gradient(to right, #d38312, #a83279)'
+			}
+		},
 	},
 	plugins: [],
 }
