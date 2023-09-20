@@ -35,3 +35,8 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+main {
+	padding: 16px;
+	max-width: 1500px;
+}
